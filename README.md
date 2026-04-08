@@ -9,6 +9,6 @@ To run this app, please take the following steps:
     Windows:
       - Git bash: `source venv/Scripts/activate`
   c. Upgrade pip using `pip install --upgrade pip`
-3. Install django using `pip install django`
+3. Install required packages using `pip install -r requirements.txt`
 4. Migrate database using `python manage.py migrate`
 5. Run server using `python manage.py runserver`
