@@ -2,7 +2,7 @@
 This is a gradebook application that I made using Python and Django
 
 To run this app, please take the following steps:
-1. Make sure that you're in the `00-gradebook` root folder
+1. Once you clone this repository, change into the `00-gradebook` root folder
 2. Initialize and activate virtual environment:
   a. Type `python -m venv venv` to create a virtual environment
   b. Activate virtual environment.
