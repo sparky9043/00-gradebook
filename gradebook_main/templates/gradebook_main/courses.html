@@ -7,10 +7,9 @@
   {% for course in courses %}
     <li>
       <div>
-        Year: {{ course.date_added|date:"Y" }}
-      </div>
-      <div>
-        Title: {{ course.title }}
+        {% comment %} <a href=> {% endcomment %}
+        {{ course.date_added|date:"Y" }} {{ course.title }}
+      {% comment %} </a> {% endcomment %}
       </div>
     </li>
     {% empty %}
