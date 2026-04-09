@@ -4,5 +4,6 @@ from . import views
 app_name = "gradebook_main"
 
 urlpatterns = [
-    path('', views.index, name="index")
+    path('', views.index, name="index"),
+    path('courses/', views.courses, name="courses"),
 ]
