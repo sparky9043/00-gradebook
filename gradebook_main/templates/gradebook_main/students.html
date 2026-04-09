@@ -1,0 +1,24 @@
+{% extends 'gradebook_main/base.html' %}
+
+{% block content %}
+
+<h1>List of Students</h1>
+<h2>Click to see student profile</h2>
+<table>
+  <tr>
+    <th>Student</th>
+    <th>Level</th>
+    <th>DOB (MM/DD/YY)</th>
+  </tr>
+  {% for student in students %}
+    <tr>
+      <td>{{ student.name }}</td>
+      <td>{{ student.level }}</td>
+      <td>{{ student.dob|date:"m-d-y" }}</td>
+    </tr>
+    {% empty %}
+    <li>No students enrolled in this course</li>
+  {% endfor %}
+</table>
+
+{% endblock content %}
