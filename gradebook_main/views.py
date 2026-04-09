@@ -11,3 +11,10 @@ def courses(request):
     courses = Course.objects.all()
     context = { 'courses': courses }
     return render(request, 'gradebook_main/courses.html', context)
+
+
+def course(request, course_id):
+    course = Course.objects.get(id=course_id)
+    students = course.student_set.all()
+    context = { 'course': course, 'students': students }
+    return render(request, 'gradebook_main/course.html', context)
