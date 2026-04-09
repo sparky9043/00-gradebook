@@ -15,6 +15,6 @@ def courses(request):
 
 def course(request, course_id):
     course = Course.objects.get(id=course_id)
-    students = course.student_set.all()
+    students = course.student_set.order_by('name')
     context = { 'course': course, 'students': students }
     return render(request, 'gradebook_main/course.html', context)
