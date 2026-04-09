@@ -17,7 +17,7 @@ class Course(models.Model):
 
 
 class Student(models.Model):
-    course = models.ManyToManyField(Course)
+    courses = models.ManyToManyField(Course)
     name = models.CharField(max_length=50)
     level = models.DecimalField(max_digits=2, decimal_places=0)
     dob = models.DateField()
