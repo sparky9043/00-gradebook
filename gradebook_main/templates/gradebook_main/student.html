@@ -1,0 +1,23 @@
+{% extends 'gradebook_main/base.html' %}
+
+{% block content %}
+
+<h1>Student: {{ student.name }}</h1>
+<ul>
+  <h2>Enrolled courses:{{ courses.count }}</h2>
+  {% for course in courses %}
+    <li>
+      <div>
+        {{ course.date_added|date:"Y" }} 
+        
+        <a href="{% url 'gradebook_main:course' course.id %}">
+          {{ course.title }}</a>
+      </div>
+    </li>
+    {% empty %}
+    <li>The student is not enrolled in any courses</li>
+
+  {% endfor %}
+</ul>
+
+{% endblock content %}

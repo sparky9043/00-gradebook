@@ -10,5 +10,6 @@ urlpatterns = [
     path('courses/<int:course_id>', views.course, name="course"),
     
     # students links
-    path('students/', views.students, name="students")
+    path('students/', views.students, name="students"),
+    path('students/<int:student_id>', views.student, name="student"),
 ]

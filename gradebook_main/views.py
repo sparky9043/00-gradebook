@@ -19,7 +19,15 @@ def course(request, course_id):
     context = { 'course': course, 'students': students }
     return render(request, 'gradebook_main/course.html', context)
 
+
 def students(request):
     students = Student.objects.all()
     context = { 'students': students }
     return render(request, 'gradebook_main/students.html', context)
+
+
+def student(request, student_id):
+    student = Student.objects.get(id=student_id)
+    courses = student.courses.all()
+    context = { 'student': student, 'courses': courses }
+    return render(request, 'gradebook_main/student.html', context)
