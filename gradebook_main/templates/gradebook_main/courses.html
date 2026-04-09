@@ -9,7 +9,10 @@
     <li>
       <div>
         {% comment %} <a href=> {% endcomment %}
-        {{ course.date_added|date:"Y" }} {{ course.title }}
+        {{ course.date_added|date:"Y" }} 
+        
+        <a href="{% url 'gradebook_main:course' course.id %}">
+          {{ course.title }}</a>
       {% comment %} </a> {% endcomment %}
       </div>
     </li>
