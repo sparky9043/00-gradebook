@@ -3,5 +3,20 @@
 {% block content %}
 
 <h1>My courses</h1>
+<ul>
+  {% for course in courses %}
+    <li>
+      <div>
+        Year: {{ course.date_added|date:"Y" }}
+      </div>
+      <div>
+        Title: {{ course.title }}
+      </div>
+    </li>
+    {% empty %}
+    <li></li>
+
+  {% endfor %}
+</ul>
 
 {% endblock content %}

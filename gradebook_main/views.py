@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+from .models import Course
 
 # Create your views here.
 def index(request):
@@ -7,4 +8,6 @@ def index(request):
 
 
 def courses(request):
-    return render(request, 'gradebook_main/courses.html')
+    courses = Course.objects.all()
+    context = { 'courses': courses }
+    return render(request, 'gradebook_main/courses.html', context)
